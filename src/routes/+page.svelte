@@ -23,7 +23,6 @@
 		// light.position.set(10, 10, 10);
 		// scene.add(light);
 
-			
 		const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
 		scene.add(ambientLight);
 
@@ -41,6 +40,39 @@
 	});
 </script>
 
-<h2>Dick Bruna</h2>
+<section class="hero">
+	<h2>Dick Bruna</h2>
 
-<canvas class="webgl"> </canvas>
+	<canvas class="webgl"> </canvas>
+</section>
+
+<section class="about">
+	<ul>
+		<li>
+			<h3>Dick Bruna</h3>
+			<article>creator of miffy</article>
+		</li>
+		<li>
+			<h3>Dick Bruna</h3>
+			<article>creator of miffy</article>
+		</li>
+		<li>
+			<h3>Dick Bruna</h3>
+			<article>creator of miffy</article>
+		</li>
+	</ul>
+</section>
+
+<style>
+	.about {
+		& ul {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-around;
+		}
+
+		& li {
+			list-style-type: none;
+		}
+	}
+</style>

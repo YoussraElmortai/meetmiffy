@@ -15,3 +15,14 @@
 {@render children()}
 
 <footer></footer>
+
+<style>
+	header {
+		height: 15rem;
+		background-color: var(--OceanBlue);
+	}
+	footer {
+		background-color: var(--TreeGreen);
+		height: 15rem;
+	}
+</style>

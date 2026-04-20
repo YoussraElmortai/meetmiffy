@@ -17,62 +17,52 @@
 		const mesh = new THREE.Mesh(geometry, material);
 		scene.add(mesh);
 
+		//sizes
+		const sizes = {
+			width: window.innerWidth,
+			height: window.innerHeight
+		};
+
 		//light
 
-		// const light = new THREE.PointLight(0xffffff, 1, 100);
-		// light.position.set(10, 10, 10);
-		// scene.add(light);
-
-		const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-		scene.add(ambientLight);
+		const light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
+		scene.add(light);
 
 		//camera
-		const camera = new THREE.PerspectiveCamera(45, 800 / 600, 0.1, 1000);
-		camera.position.z = 10;
+		const camera = new THREE.PerspectiveCamera(40, sizes.width / sizes.height);
+		camera.position.z = 15;
 
 		//render
 
 		const canvas = document.querySelector('.webgl');
 		const renderer = new THREE.WebGLRenderer({ canvas });
 
-		renderer.setSize(800, 600);
+		renderer.setSize(sizes.width, sizes.height);
 		renderer.render(scene, camera);
+
+		// resize
+
+		window.addEventListener('resize', () => {
+			sizes.width = window.innerWidth;
+			sizes.height = window.innerHeight;
+
+			camera.aspect = sizes.width / sizes.height;
+			camera.updateProjectionMatrix();
+			renderer.setSize(sizes.width, sizes.height);
+
+			renderer.render(scene, camera); // Re-render after  resize otherwise resize doesnt work?
+		});
 	});
 </script>
 
-<section class="hero">
-	<h2>Dick Bruna</h2>
+<section class="about">
+	<a class="button" href="/">About miffy</a> <a class="button" href="/">About Bruna</a>
+	<button>Button</button>
+</section>
 
+<section>
 	<canvas class="webgl"> </canvas>
 </section>
 
-<section class="about">
-	<ul>
-		<li>
-			<h3>Dick Bruna</h3>
-			<article>creator of miffy</article>
-		</li>
-		<li>
-			<h3>Dick Bruna</h3>
-			<article>creator of miffy</article>
-		</li>
-		<li>
-			<h3>Dick Bruna</h3>
-			<article>creator of miffy</article>
-		</li>
-	</ul>
-</section>
-
 <style>
-	.about {
-		& ul {
-			display: flex;
-			flex-flow: row wrap;
-			justify-content: space-around;
-		}
-
-		& li {
-			list-style-type: none;
-		}
-	}
 </style>

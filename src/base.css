@@ -1,0 +1,66 @@
+:root {
+    /* bruna colors */
+    --RetroOrange: #EA5415;
+    --GoldenYellow: #FFDF00;
+    --TreeGreen: #1D7A21;
+    --OceanBlue: #005192;
+    --Liquorice: #080000;
+
+    /*  */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    overflow-x: hidden;
+    background: var(--OceanBlue);
+}
+
+h1,
+h2,
+h3 {
+    padding: 1rem;
+}
+
+h1 {
+    margin-bottom: 2.5rem;
+}
+
+h2 {
+    margin-bottom: 2rem;
+}
+
+h3 {
+    margin-bottom: 1.5rem
+}
+
+section {
+    margin: 2.5rem 1.2rem;
+}
+
+button {
+    border-radius: 1rem;
+    border: 2px solid var(--GoldenYellow);
+    background-color: transparent;
+    color: var(--GoldenYellow);
+    padding: 0.5rem 1.5rem;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button {
+    text-decoration: none;
+    border-radius: 1rem;
+    border: 2px solid var(--GoldenYellow);
+    background-color: transparent;
+    color: var(--GoldenYellow);
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    font-size: 18px;
+}

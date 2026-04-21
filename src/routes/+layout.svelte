@@ -6,7 +6,6 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<link href="./src/base.css" rel="stylesheet" />
 </svelte:head>
 
 <header>
